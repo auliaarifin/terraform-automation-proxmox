@@ -18,7 +18,7 @@ provider "proxmox" {
 resource "proxmox_vm_qemu" "vm" {
   vmid = 300 
   name = "demo-vm"
-  target_node = "pve-backup"
+  target_node = "pve-backup" //your node name
 
   clone = "ubuntu-jammy"
   full_clone = true
@@ -41,7 +41,7 @@ resource "proxmox_vm_qemu" "vm" {
   disk {
     size = "10G"
     type = "scsi"
-    storage = "hdd1"
+    storage = "hdd1" //storage for your vm
   }
 
   network{
